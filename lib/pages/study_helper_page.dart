@@ -1,3 +1,4 @@
+import 'package:ai_integration_project/components/topic_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class StudyHelperPage extends StatelessWidget {
@@ -8,19 +9,23 @@ class StudyHelperPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Study Helper"),
+        title: const Text(
+          "Study Helper",
+          style: TextStyle(
+            fontFamily: "LeagueSpartan",
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+        backgroundColor: const Color(0xFF97b3f2),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const StudyHelperPage())
-              );
-            }
-            , child: const Text('Topic'),
-            ),
-          ], 
-      ),
-      );
+      backgroundColor: const Color(0xFF97b3f2),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        children: const [
+          TopicButtonWidget(),
+        ],
+      )
+    );
   }
 }
