@@ -1,3 +1,4 @@
+import "package:ai_integration_project/pages/topic_page.dart";
 import "package:flutter/material.dart";
 
 class TopicButtonWidget extends StatelessWidget {
@@ -18,14 +19,19 @@ class TopicButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         highlightColor: Colors.black.withOpacity(0.05),
         splashColor: Colors.black.withOpacity(0.1),
-        child: const ListTile(
-          title: Text(
+        child: ListTile(
+          title: const Text(
             "Introduction to Computing",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const TopicPage())
+            );
+          },
         ),
       ),
     );

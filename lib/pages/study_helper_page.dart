@@ -20,6 +20,15 @@ class StudyHelperPage extends StatelessWidget {
         backgroundColor: const Color(0xFF97b3f2),
       ),
       backgroundColor: const Color(0xFF97b3f2),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+
+        },
+        label: const Text("Add Topic"),
+        icon: const Icon(Icons.add),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.white,
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         children: const [
