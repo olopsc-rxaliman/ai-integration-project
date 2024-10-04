@@ -22,9 +22,9 @@ class StudyHelperPage extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFF97b3f2),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () async{
-          final result = await Navigator.push(context, MaterialPageRoute(builder: (context)=> AddTopicPage(),
-          ),
+        onPressed: () {
+          Navigator.push(
+            context, MaterialPageRoute(builder: (context)=> const AddTopicPage()),
           );
         },
         label: const Text("Add Topic"),

@@ -20,36 +20,38 @@ class AddTopicPage extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFF97b3f2),
       ),
-      backgroundColor: const Color(0xFF97b3f2),
-      body: Padding(padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextField(
-            controller: topicController,
-            decoration: InputDecoration(
-                labelText: 'Enter Topic',
-                border: OutlineInputBorder(),
-                filled: true,
-                fillColor: Colors.white,
-              ),
-          ),
-          Spacer(),
-          Align(alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                onPressed: () {
-                  String newTopic = topicController.text;
-                  if (newTopic.isNotEmpty) {
-                    Navigator.pop(context, newTopic);
-                  }
-                },
-                child: Icon(Icons.add,),
-      
-              ),
-
-          )
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          String newTopic = topicController.text;
+          if (newTopic.isNotEmpty) {
+            Navigator.pop(context, newTopic);
+          }
+        },
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        child: const Icon(Icons.add),
       ),
+      backgroundColor: const Color(0xFF97b3f2),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: topicController,
+              decoration: const InputDecoration(
+                filled: true,
+                border: OutlineInputBorder(),
+                fillColor: Colors.white,
+                hintText: 'Enter Topic',
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black54,
+                )
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
