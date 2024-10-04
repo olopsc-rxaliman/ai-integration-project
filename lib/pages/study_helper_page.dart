@@ -30,8 +30,11 @@ class StudyHelperPage extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 12),
         children: const [
+          TopicButtonWidget(),
+          TopicButtonWidget(),
           TopicButtonWidget(),
         ],
       )
