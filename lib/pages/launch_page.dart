@@ -26,7 +26,7 @@ class LaunchPage extends StatelessWidget {
                 "AI Learn",
                 style: TextStyle(
                   fontFamily: 'LeagueSpartan',
-                  color: Colors.lightBlue,
+                  color: Color(0xFF00adff),
                   fontWeight: FontWeight.bold,
                   fontSize: 40,
                 ),
