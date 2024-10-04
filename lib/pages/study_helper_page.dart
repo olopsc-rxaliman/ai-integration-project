@@ -1,5 +1,6 @@
 import 'package:ai_integration_project/components/topic_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'add_topic_page.dart';
 
 class StudyHelperPage extends StatelessWidget {
   const StudyHelperPage({super.key});
@@ -21,8 +22,10 @@ class StudyHelperPage extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFF97b3f2),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-
+        onPressed: () async{
+          final result = await Navigator.push(context, MaterialPageRoute(builder: (context)=> AddTopicPage(),
+          ),
+          );
         },
         label: const Text("Add Topic"),
         icon: const Icon(Icons.add),
