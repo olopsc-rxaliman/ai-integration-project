@@ -6,32 +6,36 @@ class TopicButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: const Color(0xFF1f70b1),
-      ),
-      child: InkWell(
-        onTap: () {
-          
-        },
-        splashFactory: InkRipple.splashFactory,
-        borderRadius: BorderRadius.circular(10),
-        highlightColor: Colors.black.withOpacity(0.05),
-        splashColor: Colors.black.withOpacity(0.1),
-        child: ListTile(
-          title: const Text(
-            "Introduction to Computing",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Ink(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: const Color(0xFF1f70b1),
+        ),
+        child: InkWell(
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const TopicPage())
             );
           },
+          splashFactory: InkRipple.splashFactory,
+          borderRadius: BorderRadius.circular(10),
+          highlightColor: Colors.black.withOpacity(0.05),
+          splashColor: Colors.black.withOpacity(0.1),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 10.0,
+            ),
+            child: Text(
+              "Introduction to Computing",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
+          ),
         ),
       ),
     );
