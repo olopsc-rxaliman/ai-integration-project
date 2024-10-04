@@ -30,12 +30,15 @@ class StudyHelperPage extends StatelessWidget {
         label: const Text("Add Topic"),
         icon: const Icon(Icons.add),
         backgroundColor: Colors.white,
-        foregroundColor: const Color.fromRGBO(0, 0, 0, 1),
+        foregroundColor: Colors.black,
       ),
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 12),
         children: const [
-          TopicButtonWidget(), 
+          TopicButtonWidget(),
+          TopicButtonWidget(),
+          TopicButtonWidget(),
         ],
       )
     );
