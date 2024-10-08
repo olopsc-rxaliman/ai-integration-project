@@ -20,7 +20,7 @@ class TopicButtonWidget extends StatelessWidget {
             );
           },
           splashFactory: InkRipple.splashFactory,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           highlightColor: Colors.black.withOpacity(0.05),
           splashColor: Colors.black.withOpacity(0.1),
           child: const Padding(
