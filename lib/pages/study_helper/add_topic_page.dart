@@ -1,7 +1,6 @@
 import "package:ai_integration_project/components/gradient_background.dart";
 import "package:flutter/material.dart";
 
-
 class AddTopicPage extends StatelessWidget {
   const AddTopicPage({super.key});
 
@@ -25,8 +24,8 @@ class AddTopicPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           String newTopic = topicController.text;
-          if (newTopic.isNotEmpty) {
-            Navigator.pop(context, newTopic);
+          if (newTopic.trim().isNotEmpty) {
+            // TODO: Add loader overlay in this part
           }
         },
         backgroundColor: Colors.white,
@@ -44,18 +43,17 @@ class AddTopicPage extends StatelessWidget {
               TextField(
                 controller: topicController,
                 decoration: InputDecoration(
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide.none,
-                  ),
-                  fillColor: Colors.white,
-                  hintText: 'Enter Topic',
-                  hintStyle: const TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black54,
-                  )
-                ),
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide.none,
+                    ),
+                    fillColor: Colors.white,
+                    hintText: 'Enter Topic',
+                    hintStyle: const TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black54,
+                    )),
               ),
             ],
           ),

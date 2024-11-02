@@ -7,6 +7,9 @@
   idx.extensions = [
     
   ];
+  env = {
+    GEMINI_API_KEY = "AIzaSyBzHpUihAJhvJOrrBKP5k-HrMXvPJJpx28";
+  };
   idx.previews = {
     previews = {
       web = {
