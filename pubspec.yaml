@@ -95,6 +95,8 @@ flutter:
           weight: 700
   assets:
     - lib/resources/images/gemini.png
+    - lib/resources/images/alt-app-logo.png
+    - lib/resources/images/main-app-logo-transparent.png
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

@@ -15,11 +15,6 @@ class HomeDrawer extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'lib/resources/images/gemini.png',
-                    scale: 8,
-                  ),
-                  const SizedBox(width: 20),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,14 +35,14 @@ class HomeDrawer extends StatelessWidget {
                             "Powered by: ",
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 13,
+                              fontSize: 15,
                             ),
                           ),
                           const Text(
                             "Google Gemini ",
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 13,
+                              fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
