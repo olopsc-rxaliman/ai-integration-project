@@ -97,6 +97,9 @@ flutter:
     - lib/resources/images/gemini.png
     - lib/resources/images/alt-app-logo.png
     - lib/resources/images/main-app-logo-transparent.png
+    - lib/resources/images/schedule-builder-icon.png
+    - lib/resources/images/study-helper-icon.png
+    - lib/resources/images/todolist-icon.png
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

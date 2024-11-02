@@ -1,6 +1,6 @@
 import 'package:ai_integration_project/components/app_button_widget.dart';
 import 'package:ai_integration_project/components/home_drawer.dart';
-import 'package:ai_integration_project/pages/ToDoList_page.dart';
+import 'package:ai_integration_project/pages/todolist_page.dart';
 import 'package:ai_integration_project/pages/schedule_builder_page.dart';
 import "package:flutter/material.dart";
 import 'study_helper_page.dart';
@@ -27,9 +27,16 @@ class _HomePageState extends State<HomePage> {
             fontSize: 25,
           ),
         ),
+        actions: [
+          Image.asset(
+            'lib/resources/images/main-app-logo-transparent.png',
+            scale: 30,
+            isAntiAlias: true,
+          ),
+          const SizedBox(width: 15)
+        ],
       ),
       drawer: const HomeDrawer(),
-      // backgroundColor: const Color(0xFF00adff),
       backgroundColor: Colors.transparent,
       body: Container(
         decoration: const BoxDecoration(
@@ -43,29 +50,35 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: ListView(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+            vertical: 10,
+          ),
           children: [
             AppButtonWidget(
               title: "Study Helper",
               icon: Image.asset(
-                'lib/resources/images/gemini.png',
-                scale: 3,
+                'lib/resources/images/study-helper-icon.png',
+                scale: 8,
+                isAntiAlias: true,
               ),
               nextPage: const StudyHelperPage(),
             ),
             AppButtonWidget(
               title: "To-Do List",
               icon: Image.asset(
-                'lib/resources/images/gemini.png',
-                scale: 3,
+                'lib/resources/images/todolist-icon.png',
+                scale: 8,
+                isAntiAlias: true,
               ),
               nextPage: const ToDoListPage(),
             ),
             AppButtonWidget(
               title: "Schedule Builder",
               icon: Image.asset(
-                'lib/resources/images/gemini.png',
-                scale: 3,
+                'lib/resources/images/schedule-builder-icon.png',
+                scale: 8,
+                isAntiAlias: true,
               ),
               nextPage: const ScheduleBuilderPage(),
             ),
