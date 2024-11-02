@@ -1,9 +1,10 @@
 import 'package:ai_integration_project/components/app_button_widget.dart';
+import 'package:ai_integration_project/components/gradient_background.dart';
 import 'package:ai_integration_project/components/home_drawer.dart';
 import 'package:ai_integration_project/pages/todolist_page.dart';
 import 'package:ai_integration_project/pages/schedule_builder_page.dart';
 import "package:flutter/material.dart";
-import 'study_helper_page.dart';
+import 'study_helper/study_helper_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(0xFF00adff),
         foregroundColor: Colors.white,
         title: const Text(
-          "App Dashboard",
+          "Home",
           style: TextStyle(
             fontFamily: "LeagueSpartan",
             fontWeight: FontWeight.bold,
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         actions: [
+          // TODO: Make some easter eggs when this is pressed multiple times
           Image.asset(
             'lib/resources/images/main-app-logo-transparent.png',
             scale: 30,
@@ -38,17 +40,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: const HomeDrawer(),
       backgroundColor: Colors.transparent,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            colors: [
-              Color(0xFF1f70b1),
-              Color(0xFF00adff),
-            ],
-          ),
-        ),
+      body: GradientBackground(
         child: ListView(
           padding: const EdgeInsets.symmetric(
             horizontal: 40,
@@ -83,7 +75,7 @@ class _HomePageState extends State<HomePage> {
               nextPage: const ScheduleBuilderPage(),
             ),
           ],
-        )
+        ),
       ),
     );
   }

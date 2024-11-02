@@ -4,11 +4,7 @@ class DeveloperTile extends StatelessWidget {
   final String name;
   final String role;
 
-  const DeveloperTile(
-    this.name,
-    this.role,
-    {super.key}
-  );
+  const DeveloperTile(this.name, this.role, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +17,10 @@ class DeveloperTile extends StatelessWidget {
             fontSize: 18,
           ),
         ),
-        Text(
-          role,
-          style: const TextStyle(
-            color: Colors.black54,
-          )
-        ),
+        Text(role,
+            style: const TextStyle(
+              color: Colors.black54,
+            )),
       ],
     );
   }
@@ -50,7 +44,8 @@ class DeveloperDialog extends StatelessWidget {
             child: Opacity(
               opacity: 0.15,
               child: ColorFiltered(
-                colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
                 child: Image.asset(
                   'lib/resources/images/main-app-logo-transparent.png',
                   scale: 4,
@@ -79,7 +74,7 @@ class DeveloperDialog extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text(
                           "Developers",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ),
                     ],
@@ -89,15 +84,19 @@ class DeveloperDialog extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          DeveloperTile("Rovic Xavier Aliman", "Lead Developer"),
+                          DeveloperTile(
+                              "Rovic Xavier Aliman", "Lead Developer"),
                           SizedBox(height: 5),
-                          DeveloperTile("June Jelo Alcantara", "Associate Developer"),
+                          DeveloperTile(
+                              "June Jelo Alcantara", "Associate Developer"),
                           SizedBox(height: 5),
                           DeveloperTile("Arianne Cielo", "Associate Developer"),
                           SizedBox(height: 5),
-                          DeveloperTile("Terd Inocentes", "Associate Developer"),
+                          DeveloperTile(
+                              "Terd Inocentes", "Associate Developer"),
                           SizedBox(height: 5),
-                          DeveloperTile("Maverick Malala", "Associate Developer"),
+                          DeveloperTile(
+                              "Maverick Malala", "Associate Developer"),
                         ],
                       ),
                     ),

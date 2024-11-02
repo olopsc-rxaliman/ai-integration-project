@@ -1,4 +1,4 @@
-import "package:ai_integration_project/pages/topic_page.dart";
+import "package:ai_integration_project/pages/study_helper/topic_page.dart";
 import "package:flutter/material.dart";
 
 class TopicButtonWidget extends StatelessWidget {
@@ -6,12 +6,13 @@ class TopicButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+    return Card(
+      color: Colors.transparent,
+      shadowColor: Colors.transparent,
       child: Ink(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
-          color: const Color(0xFF1f70b1),
+          color: Colors.white,
         ),
         child: InkWell(
           onTap: () {
@@ -31,7 +32,7 @@ class TopicButtonWidget extends StatelessWidget {
             child: Text(
               "Introduction to Computing",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 18,
               ),
             ),
