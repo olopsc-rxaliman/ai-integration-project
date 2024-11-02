@@ -31,6 +31,9 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Project IDX Secrets
+.idx/
+
 # Symbolication related
 app.*.symbols
 
