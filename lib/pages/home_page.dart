@@ -1,5 +1,7 @@
 import 'package:ai_integration_project/components/app_button_widget.dart';
 import 'package:ai_integration_project/components/home_drawer.dart';
+import 'package:ai_integration_project/pages/ToDoList_page.dart';
+import 'package:ai_integration_project/pages/schedule_builder_page.dart';
 import "package:flutter/material.dart";
 import 'study_helper_page.dart';
 
@@ -40,27 +42,35 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  AppButtonWidget(
-                    title: "Study Helper",
-                    icon: Image.asset(
-                      'lib/resources/images/gemini.png',
-                      scale: 3,
-                    ),
-                    nextPage: const StudyHelperPage(),
-                  ),
-                ],
+        child: ListView(
+          padding: const EdgeInsets.all(10),
+          children: [
+            AppButtonWidget(
+              title: "Study Helper",
+              icon: Image.asset(
+                'lib/resources/images/gemini.png',
+                scale: 3,
               ),
-            ],
-          ),
-        ),
+              nextPage: const StudyHelperPage(),
+            ),
+            AppButtonWidget(
+              title: "To-Do List",
+              icon: Image.asset(
+                'lib/resources/images/gemini.png',
+                scale: 3,
+              ),
+              nextPage: const ToDoListPage(),
+            ),
+            AppButtonWidget(
+              title: "Schedule Builder",
+              icon: Image.asset(
+                'lib/resources/images/gemini.png',
+                scale: 3,
+              ),
+              nextPage: const ScheduleBuilderPage(),
+            ),
+          ],
+        )
       ),
     );
   }
