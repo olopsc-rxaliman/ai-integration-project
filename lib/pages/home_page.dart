@@ -1,6 +1,9 @@
 import 'package:ai_integration_project/components/app_button_widget.dart';
 import 'package:ai_integration_project/components/home_drawer.dart';
+import 'package:ai_integration_project/pages/ToDoList_page.dart';
+import 'package:ai_integration_project/pages/schedule_builder_page.dart';
 import "package:flutter/material.dart";
+import 'ToDoList_page.dart';
 import 'study_helper_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,6 +46,22 @@ class _HomePageState extends State<HomePage> {
                     scale: 3,
                   ),
                   nextPage: const StudyHelperPage(),
+                ),
+                AppButtonWidget(
+                  title: "To-Do List",
+                  icon: Image.asset(
+                    'lib/resources/images/gemini.png',
+                    scale: 3,
+                  ),
+                  nextPage: const ToDoListPage(),
+                ),
+                AppButtonWidget(
+                  title: "Schedule Builder",
+                  icon: Image.asset(
+                    'lib/resources/images/gemini.png',
+                    scale: 3,
+                  ),
+                  nextPage: const ScheduleBuilderPage(),
                 ),
               ],
             ),
