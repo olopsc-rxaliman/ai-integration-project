@@ -27,26 +27,39 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       drawer: const HomeDrawer(),
-      backgroundColor: const Color(0xFF00adff),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                AppButtonWidget(
-                  title: "Study Helper",
-                  icon: Image.asset(
-                    'lib/resources/images/gemini.png',
-                    scale: 3,
+      // backgroundColor: const Color(0xFF00adff),
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+            colors: [
+              Color(0xFF1f70b1),
+              Color(0xFF00adff),
+            ],
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  AppButtonWidget(
+                    title: "Study Helper",
+                    icon: Image.asset(
+                      'lib/resources/images/gemini.png',
+                      scale: 3,
+                    ),
+                    nextPage: const StudyHelperPage(),
                   ),
-                  nextPage: const StudyHelperPage(),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
