@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604460936367",
+    "project_id": "ai-learn-48952",
+    "storage_bucket": "ai-learn-48952.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604460936367:android:a605e649ffd09934c5785a",
+        "android_client_info": {
+          "package_name": "com.example.ai_integration_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV_doRAQUtOdbwaDikTcL394b3pk1pUXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

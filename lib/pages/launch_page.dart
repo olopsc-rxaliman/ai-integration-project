@@ -16,7 +16,8 @@ class LaunchPage extends StatelessWidget {
         children: [
           Image.asset(
             'lib/resources/images/alt-app-logo.png',
-            scale: 8,
+            width: 160,
+            height: 160,
             isAntiAlias: true,
           ),
           const Text(

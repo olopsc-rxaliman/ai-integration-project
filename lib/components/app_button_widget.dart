@@ -2,13 +2,13 @@ import "package:flutter/material.dart";
 
 class AppButtonWidget extends StatelessWidget {
   final String title;
-  final Widget icon;
+  final String iconPath;
   final Widget nextPage;
 
   const AppButtonWidget({
     super.key,
     required this.title,
-    required this.icon,
+    required this.iconPath,
     required this.nextPage,
   });
 
@@ -36,7 +36,12 @@ class AppButtonWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                icon,
+                Image.asset(
+                  iconPath,
+                  width: 150,
+                  height: 150,
+                  isAntiAlias: true,
+                ),
                 Text(
                   title,
                   style: const TextStyle(

@@ -39,12 +39,14 @@ class QuizTileWidget extends StatelessWidget {
                 fontSize: 20.0,
               ),
             ),
+            const SizedBox(height: 10),
             Text(
               choices,
               style: const TextStyle(
                 fontSize: 18.0,
               ),
             ),
+            const SizedBox(height: 10),
             showAnswer ?
             Row(
               children: [
