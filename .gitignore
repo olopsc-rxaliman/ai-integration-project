@@ -32,7 +32,7 @@ migrate_working_dir/
 /build/
 
 # Project IDX Secrets
-.idx/
+.idx/dev.nix
 
 # Symbolication related
 app.*.symbols

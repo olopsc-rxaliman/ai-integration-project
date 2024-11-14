@@ -1,13 +1,18 @@
 import "package:ai_integration_project/components/gradient_background.dart";
+import "package:ai_integration_project/services/hive/hive_functions_study_helper.dart";
 import "package:flutter/material.dart";
 
 class AddTopicPage extends StatelessWidget {
-  const AddTopicPage({super.key});
+  final TextEditingController topicController = TextEditingController();
+  final Function() onSubmit;
+
+  AddTopicPage({
+    super.key,
+    required this.onSubmit,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController topicController = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -21,18 +26,6 @@ class AddTopicPage extends StatelessWidget {
         backgroundColor: const Color(0xFF00adff),
         foregroundColor: Colors.white,
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          String newTopic = topicController.text;
-          if (newTopic.trim().isNotEmpty) {
-            // TODO: Add loader overlay in this part
-          }
-        },
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        label: const Text("Add Topic"),
-        icon: const Icon(Icons.add),
-      ),
       backgroundColor: Colors.transparent,
       body: GradientBackground(
         child: Padding(
@@ -42,18 +35,57 @@ class AddTopicPage extends StatelessWidget {
             children: [
               TextField(
                 controller: topicController,
+                minLines: 1,
+                maxLines: 3,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: Colors.white,
-                    hintText: 'Enter Topic',
-                    hintStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black54,
-                    )),
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
+                  ),
+                  fillColor: Colors.white,
+                  hintText: 'Topic Name',
+                  hintStyle: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: TextButton(
+                      onPressed: () {
+                        if (topicController.text.trim() == '') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text("Kindly add a topic name")));
+                        } else {
+                          StudyHelperHiveFunctions.addTopic(
+                              topicController.text);
+                          onSubmit();
+                          Navigator.of(context).pop();
+                        }
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 12,
+                          horizontal: 16,
+                        ),
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      child: const Text(
+                        "Add Topic",
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      )),
+                ),
               ),
             ],
           ),

@@ -4,7 +4,7 @@ import 'package:ai_integration_project/components/home_drawer.dart';
 import 'package:ai_integration_project/pages/todolist_page.dart';
 import 'package:ai_integration_project/pages/schedule_builder_page.dart';
 import "package:flutter/material.dart";
-import 'study_helper/study_helper_page.dart';
+import 'study_helper_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,33 +46,21 @@ class _HomePageState extends State<HomePage> {
             horizontal: 40,
             vertical: 10,
           ),
-          children: [
+          children: const [
             AppButtonWidget(
               title: "Study Helper",
-              icon: Image.asset(
-                'lib/resources/images/study-helper-icon.png',
-                scale: 8,
-                isAntiAlias: true,
-              ),
-              nextPage: const StudyHelperPage(),
+              iconPath: 'lib/resources/images/study-helper-icon.png',
+              nextPage: StudyHelperPage(),
             ),
             AppButtonWidget(
               title: "To-Do List",
-              icon: Image.asset(
-                'lib/resources/images/todolist-icon.png',
-                scale: 8,
-                isAntiAlias: true,
-              ),
-              nextPage: const ToDoListPage(),
+              iconPath: 'lib/resources/images/todolist-icon.png',
+              nextPage: ToDoListPage(),
             ),
             AppButtonWidget(
               title: "Schedule Builder",
-              icon: Image.asset(
-                'lib/resources/images/schedule-builder-icon.png',
-                scale: 8,
-                isAntiAlias: true,
-              ),
-              nextPage: const ScheduleBuilderPage(),
+              iconPath: 'lib/resources/images/schedule-builder-icon.png',
+              nextPage: ScheduleBuilderPage(),
             ),
           ],
         ),

@@ -3,21 +3,29 @@ import "package:ai_integration_project/components/quiz_tile_widget.dart";
 import "package:flutter/material.dart";
 
 class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+  final List questions;
+
+  const QuizPage({
+    super.key,
+    required this.questions,
+  });
 
   @override
   State<QuizPage> createState() => _QuizPageState();
 }
 
 class _QuizPageState extends State<QuizPage> {
-  final answerShowStates = [
-    false,
-    false,
-    false,
-    false,
-  ];
+  late final List questions;
+  late final List answerShowStates;
   bool isShowAnswersButtonToggled = false;
   int showAnswerCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    questions = widget.questions;
+    answerShowStates = List.filled(questions.length, false);
+  }
 
   void toggleAnswerVisibility(int index) {
     setState(() {
@@ -26,8 +34,7 @@ class _QuizPageState extends State<QuizPage> {
       }
       if (answerShowStates[index] == true) {
         showAnswerCount -= 1;
-      }
-      else {
+      } else {
         showAnswerCount += 1;
       }
       if (showAnswerCount == answerShowStates.length) {
@@ -40,10 +47,11 @@ class _QuizPageState extends State<QuizPage> {
   void toggleAllAnswerVisibility() {
     setState(() {
       isShowAnswersButtonToggled = !isShowAnswersButtonToggled;
-      for (int a=0; a<answerShowStates.length; a++) {
+      for (int a = 0; a < answerShowStates.length; a++) {
         answerShowStates[a] = isShowAnswersButtonToggled;
       }
-      showAnswerCount = isShowAnswersButtonToggled ? answerShowStates.length : 0;
+      showAnswerCount =
+          isShowAnswersButtonToggled ? answerShowStates.length : 0;
     });
   }
 
@@ -66,9 +74,9 @@ class _QuizPageState extends State<QuizPage> {
             onPressed: () {
               toggleAllAnswerVisibility();
             },
-            icon: Icon(
-              isShowAnswersButtonToggled ? Icons.visibility_off : Icons.visibility
-            ),
+            icon: Icon(isShowAnswersButtonToggled
+                ? Icons.visibility_off
+                : Icons.visibility),
             label: Text(
               isShowAnswersButtonToggled ? "Hide Answers" : "Show Answers",
               style: const TextStyle(
@@ -85,38 +93,16 @@ class _QuizPageState extends State<QuizPage> {
       ),
       backgroundColor: Colors.transparent,
       body: GradientBackground(
-        child: ListView(
+        child: ListView.builder(
           physics: const BouncingScrollPhysics(),
-          children: [
-            QuizTileWidget(
-              question: "Question 1",
-              choices: "A. Choice 1\nB. Choice 2\nC. Choice 3\nD. Choice 4",
-              answer: "A",
-              showAnswer: answerShowStates[0],
-              showAnswerFunction: () => toggleAnswerVisibility(0),
-            ),
-            QuizTileWidget(
-              question: "Question 2",
-              choices: "A. Choice 1\nB. Choice 2\nC. Choice 3\nD. Choice 4",
-              answer: "B",
-              showAnswer: answerShowStates[1],
-              showAnswerFunction: () => toggleAnswerVisibility(1),
-            ),
-            QuizTileWidget(
-              question: "Question 3",
-              choices: "A. Choice 1\nB. Choice 2\nC. Choice 3\nD. Choice 4",
-              answer: "C",
-              showAnswer: answerShowStates[2],
-              showAnswerFunction: () => toggleAnswerVisibility(2),
-            ),
-            QuizTileWidget(
-              question: "Question 4",
-              choices: "A. Choice 1\nB. Choice 2\nC. Choice 3\nD. Choice 4",
-              answer: "D",
-              showAnswer: answerShowStates[3],
-              showAnswerFunction: () => toggleAnswerVisibility(3),
-            ),
-          ],
+          itemCount: questions.length,
+          itemBuilder: (context, index) => QuizTileWidget(
+            question: questions[index]['question'],
+            choices: questions[index]['choices'],
+            answer: questions[index]['answer'],
+            showAnswer: answerShowStates[index],
+            showAnswerFunction: () => toggleAnswerVisibility(index),
+          ),
         ),
       ),
     );
